@@ -58,6 +58,8 @@ const updateCheckout = () => {
 }
 
 const chellada_quantity = document.querySelector('#chellada_quantity');
+const wallia_quantity = document.querySelector('#wallia_quantity');
+const kebero_quantity = document.querySelector('#kebero_quantity');
 
 //initially the buttons are disabled. They will be back to active when the user selects quantity.
 const quantitySelected = (event) => {
@@ -75,6 +77,8 @@ const quantitySelected = (event) => {
   }
 }
 chellada_quantity.addEventListener('change', (event) => quantitySelected(event));
+wallia_quantity.addEventListener('change', (event) => quantitySelected(event));
+kebero_quantity.addEventListener('change', (event) => quantitySelected(event));
 
 //purchased object example {type: 'chellada', quantity: 2 }
 
@@ -84,11 +88,11 @@ const addToCheckout = (type) => {
   let valid_types = Object.keys(cards);
   if (valid_types.includes(type)) {
     //create the object for checkout here.
-    let checkout_card = {type: type, quantity: 1};
+    let checkout_card = {type: type, quantity: window[type+"_quantity"].value};
     checkout.push(checkout_card);
     updateCheckout();
   }
 }
 buy_chellada_card.addEventListener('click', () => addToCheckout('chellada'));
 buy_wallia_card.addEventListener('click', () => addToCheckout('wallia'));
-
+buy_kebero_card.addEventListener('click', () => addToCheckout('kebero'));
