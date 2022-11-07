@@ -40,9 +40,14 @@ const buy_kebero_card = document.querySelector('#kebero');
 
 const checkout_list = document.querySelector('#checkout_list');
 
+//Grand Total Implementation
+let grandTotal = document.querySelector("#grandtotal");
+
 const updateCheckout = () => {
   //create a list to be shown on the checkout list.
   let checkout_table = "";
+  let tempGrandTotal = 0;
+  
   if (checkout.length > 0) {
     checkout.forEach( card => {
       let total = parseInt(cards[card.type].price)*parseInt(card.quantity);
@@ -52,7 +57,11 @@ const updateCheckout = () => {
       <td>${cards[card.type].price}</td>
       <td>${total}</td>
     </tr>`;
+
+      tempGrandTotal += total
     });
+
+    grandTotal.innerText = tempGrandTotal
     checkout_list.innerHTML = checkout_table;
   }
 }
@@ -96,3 +105,7 @@ const addToCheckout = (type) => {
 buy_chellada_card.addEventListener('click', () => addToCheckout('chellada'));
 buy_wallia_card.addEventListener('click', () => addToCheckout('wallia'));
 buy_kebero_card.addEventListener('click', () => addToCheckout('kebero'));
+
+
+
+
