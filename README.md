@@ -1,5 +1,5 @@
 # Phone Card App
-#First Odin Project. 
+#First full functional front end only web app. 
 
 ## Languages Used 
 1. HTML 
