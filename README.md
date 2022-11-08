@@ -1,20 +1,18 @@
-# Phone Card app.
+# Phone Card App
+#First Odin Project. 
 
-## You can get the project either using git clone or by downloading the zip folder.
+## Languages Used 
+1. HTML 
+2. CSS
+3. JavaScript
 
-To download the project:
-1. Go to the following link https://github.com/practicalit/phone-card.
-2. Click on the green button that says Code.
-3. From the drop down, select the download zip.
-4. It will download the phone-card-master.zip file.
-5. [Windows] Unzip the file by right clicking on it and selecting extract all
-5. [Mac] doubleclick on the file and follow the path to see extracted files.
-6. Open the folder with visual code and start hacking!
+## Description
+In this project I built several functionalities to the app. Each functionality unique from the other and each testing different parts of programming. 
 
-To use git clone:
-1. issue git clone https://github.com/practicalit/phone-card.git
-2. The above command will copy the folder phone-card to your directory.
-3. Open the folder with visual code and start hacking!
+## Purpose
+The main purpose of this project was to put into practice what I have learned so far. Adding functionalities on the front end side of a web app. 
 
->Your first task is to get the phone card app running locally and see what it is doing. All your tasks are listed under Task link in the page.
-
+## Reflection
+- I found it to be harder but rewarding to apply knowledge than learning it theoretically. 
+- I am now much more confident in being able to make JS work with HTML to achieve desired outcome.  
+- I learned there is still a lot more to be learned
