@@ -315,6 +315,31 @@
               <p>
                 Allow the user to add minutes to the card they purchased.
               </p>
+              <div class="container" data-aos="zoom-out">
+                <div class="row">
+                  <div class="col-lg-12 text-center text-lg-left">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                      <div class="form-group">
+                        <select id="add_type" class="form-control">
+                          <option value="">Select Type</option>
+                          <option value="wallia">Wallia</option>
+                          <option value="chellada">Chellada</option>
+                          <option value="kebero">Key Kebero</option>
+                        </select>
+                        <div class="validate"></div>
+                      </div>
+                      <div class="form-group">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Input desired minutes" id="add_minutes">
+                        <div class="validate"></div>
+                      </div>
+                      <div class="text-center"><button class="btn-submit" type="button" title="Send Message" id="add_btn">Add Minutes</button></div>
+                    </form>
+        
+                  </div>
+                </div>
+        
+              </div>
             </div>
           </li>
 
@@ -397,7 +422,7 @@
               <p>Please register and become a member and unleash the benefits we provide exclusively for members.</p>
               <p>It won't take that long.. We promise.</p>
 
-              <form role="form" class="php-email-form">
+              <form role="form" class="php-email-form" id="memberForm">
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="first_name" placeholder="Your First Name"
                     data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
@@ -419,7 +444,7 @@
                   <div class="validate"></div>
                 </div>                
 
-                <div class="text-center"><a href="#" class="btn-submit" type="button" title="Register">Register</a></div>
+                <div class="text-center"><a href="#" class="btn-submit" type="button" title="Register" id="register">Register</a></div>
               </form>
 
             </div>

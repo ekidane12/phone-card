@@ -142,16 +142,54 @@ const balance = document.querySelector("#balance");
 //Implementing Checkout update
 const checkoutCounter = document.querySelector("#checkoutCounter");
 
+
 //collect the emails of our subscribers in the email_subscribers array
 let registerSub = document.querySelector("#subscribe");
 let subEmail = document.querySelector("#sub-email");
 
 const addToEmailArray = (emailAddress) => {
   email_subscribers.push(emailAddress.value)
+  subEmail.requestFullscreen
   console.log(email_subscribers)
 }
 
-registerSub.addEventListener("submit", () => addToEmailArray(subEmail))
+registerSub.addEventListener("click", () => addToEmailArray(subEmail))
+
+//Add member
+let registerBtn = document.querySelector("#register");
+let fname = document.querySelector("#first_name");
+let lname = document.querySelector("#last_name");
+let email = document.querySelector("#email");
+let phone = document.querySelector("#phone");
+
+
+const addMember = (fname, lname, email, phone) => {
+  let member_card = {first_name: fname, last_name: lname, email: email, phone: phone}
+  members.push(member_card)
+  console.log(members)
+  document.querySelector("#memberForm").reset()
+}
+
+registerBtn.addEventListener("click", () => addMember(fname.value, lname.value, email.value, phone.value))
+
+
+//Add minutes
+let addType = document.querySelector("#add_type")
+let addAmount = document.querySelector("#add_minutes")
+let addBtn = document.querySelector("#add_btn")
+
+const addMinutes = (type, amount) => {
+  if(checkout.length > 0){
+    checkout.forEach((card) => {
+      if(card.type == type.value){
+        balance.innerText = +balance.innerText + +amount.value
+      }
+    })
+  }
+}
+
+addBtn.addEventListener("click", () => addMinutes(addType,addAmount));
+
 
 
 
