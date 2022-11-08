@@ -47,6 +47,7 @@ const updateCheckout = () => {
   //create a list to be shown on the checkout list.
   let checkout_table = "";
   let tempGrandTotal = 0;
+  let finalBalance = 0;
 
   if (checkout.length > 0) {
     checkout.forEach( card => {
@@ -59,9 +60,12 @@ const updateCheckout = () => {
     </tr>`;
 
       tempGrandTotal += total
+      finalBalance =
+        +balance.innerText + cards[card.type].minutes * parseInt(card.quantity);
     });
 
-    grandTotal.innerText = tempGrandTotal
+    balance.innerText = finalBalance;
+    grandTotal.innerText = tempGrandTotal;
     checkout_list.innerHTML = checkout_table;
   }
 }
@@ -127,6 +131,10 @@ const addToCheckout2 = (type, quantity) => {
 };
 
 buy_card.addEventListener("click", () => addToCheckout2(buy_type, buy_quantity));
+
+
+//Implementing show Balance
+const balance = document.querySelector("#balance");
 
 
 
