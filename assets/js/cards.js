@@ -48,6 +48,7 @@ const updateCheckout = () => {
   let checkout_table = "";
   let tempGrandTotal = 0;
   let finalBalance = 0;
+  let finalCheckOut = 0;
 
   if (checkout.length > 0) {
     checkout.forEach( card => {
@@ -60,13 +61,15 @@ const updateCheckout = () => {
     </tr>`;
 
       tempGrandTotal += total
-      finalBalance =
-        +balance.innerText + cards[card.type].minutes * parseInt(card.quantity);
+      finalBalance = +balance.innerText + cards[card.type].minutes * parseInt(card.quantity);
+      finalCheckOut = +checkoutCounter.innerText + parseInt(card.quantity);
     });
-
+    
     balance.innerText = finalBalance;
     grandTotal.innerText = tempGrandTotal;
     checkout_list.innerHTML = checkout_table;
+    checkoutCounter.innerText = finalCheckOut
+    
   }
 }
 
@@ -135,6 +138,9 @@ buy_card.addEventListener("click", () => addToCheckout2(buy_type, buy_quantity))
 
 //Implementing show Balance
 const balance = document.querySelector("#balance");
+
+//Implementing Checkout update
+const checkoutCounter = document.querySelector("#checkoutCounter");
 
 
 
