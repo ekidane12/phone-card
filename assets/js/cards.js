@@ -47,7 +47,7 @@ const updateCheckout = () => {
   //create a list to be shown on the checkout list.
   let checkout_table = "";
   let tempGrandTotal = 0;
-  
+
   if (checkout.length > 0) {
     checkout.forEach( card => {
       let total = parseInt(cards[card.type].price)*parseInt(card.quantity);
@@ -105,6 +105,28 @@ const addToCheckout = (type) => {
 buy_chellada_card.addEventListener('click', () => addToCheckout('chellada'));
 buy_wallia_card.addEventListener('click', () => addToCheckout('wallia'));
 buy_kebero_card.addEventListener('click', () => addToCheckout('kebero'));
+
+//Implementing the Buy Card Section
+const buy_type = document.querySelector("#buy_type");
+const buy_quantity = document.querySelector("#buy_quantity");
+const buy_card = document.querySelector("#buy_card");
+
+const addToCheckout2 = (type, quantity) => {
+  console.log(this);
+  type = type.value;
+  quantity = quantity.value;
+  //get valid card types
+  let valid_types = Object.keys(cards); //valid_types = [kebero,chellada,wallia]
+  if (valid_types.includes(type)) {
+    //create the object for checkout here.
+    let checkout_card = { type: type, quantity: quantity };
+    console.log(checkout_card);
+    checkout.push(checkout_card);
+    updateCheckout();
+  }
+};
+
+buy_card.addEventListener("click", () => addToCheckout2(buy_type, buy_quantity));
 
 
 
