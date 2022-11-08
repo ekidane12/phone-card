@@ -142,6 +142,17 @@ const balance = document.querySelector("#balance");
 //Implementing Checkout update
 const checkoutCounter = document.querySelector("#checkoutCounter");
 
+//collect the emails of our subscribers in the email_subscribers array
+let registerSub = document.querySelector("#subscribe");
+let subEmail = document.querySelector("#sub-email");
+
+const addToEmailArray = (emailAddress) => {
+  email_subscribers.push(emailAddress.value)
+  console.log(email_subscribers)
+}
+
+registerSub.addEventListener("submit", () => addToEmailArray(subEmail))
+
 
 
 
